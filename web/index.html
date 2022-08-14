@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8" />
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+  <meta name="description" content="세븐틴 취향표" />
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="세븐틴 취향표" />
+  <link rel="apple-touch-icon" href="app-logo.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png" />
+
+  <meta property="og:title" content="세븐틴 취향표" />
+  <meta property="og:description" content="세븐틴 취향표" />
+  <meta property="og:image"
+    content="https://firebasestorage.googleapis.com/v0/b/svt-style.appspot.com/o/%E1%84%8E%E1%85%B1%E1%84%92%E1%85%A3%E1%86%BC%E1%84%91%E1%85%AD%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5.png?alt=media&token=9e44b934-0440-451d-85c6-c1edf5d276ce" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="400" />
+  <meta property="og:url" content="svt-style.web.app" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="세븐틴 취향표" />
+  <meta property="twitter:url" content="svt-style.web.app" />
+  <meta property="twitter:description" content="세븐틴 취향표" />
+  <meta property="twitter:image"
+    content="https://firebasestorage.googleapis.com/v0/b/svt-style.appspot.com/o/%E1%84%8E%E1%85%B1%E1%84%92%E1%85%A3%E1%86%BC%E1%84%91%E1%85%AD%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5.png?alt=media&token=9e44b934-0440-451d-85c6-c1edf5d276ce" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <title>세븐틴 취향표</title>
+  <link rel="manifest" href="manifest.json" />
+
+  <script language="javascript">
+    img = [
+      "app-icon.png",
+      "조금만 기다려 주세요...",
+      "안 뜨면 새로고침 해 주세요..",
+    ];
+
+    function showImage() {
+      img.src = imgArray[imgNum][0];
+      var first = document.getElementById("first");
+      first.innerText = imgArray[imgNum][1];
+      var second = document.getElementById("second");
+      second.innerText = imgArray[imgNum][2];
+    }
+  </script>
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    var serviceWorkerVersion = null;
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
+</head>
+
+<body onload="showImage()">
+  <div class="loading" style="
+        text-align: center;
+        display: table;
+        padding-top: 150px;
+        margin: 0 auto;
+      ">
+    <img id="introImg" style="border: 0" width="120" />
+    <p id="first" style="color: black; padding-top: 20px"></p>
+    <p id="second" style="color: black"></p>
+    <div></div>
+  </div>
+  <script>
+    window.addEventListener('load', function (ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        }
+      }).then(function (engineInitializer) {
+        return engineInitializer.initializeEngine();
+      }).then(function (appRunner) {
+        return appRunner.runApp();
+      });
+    });
+  </script>
+</body>
+
+</html>
