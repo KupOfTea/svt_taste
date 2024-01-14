@@ -1,16 +1,12 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'dart:ui' as ui;
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:image_picker_web/image_picker_web.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:svt_taste/app/data/member.dart';
 import 'package:svt_taste/app/data/seventeen.dart';
-import 'package:svt_taste/app/modules/home/widgets/gradient_text.dart';
 import 'package:svt_taste/app/routes/app_pages.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -37,6 +33,47 @@ class HomeView extends GetView<HomeController> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              Text(
+                "리뉴얼된 사이트를 이용해 주세요!",
+                style: GoogleFonts.getFont(
+                  'Jua',
+                  fontSize: 24.sp,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  launchUrlString("https://svt-style.vercel.app/");
+                },
+                child: Container(
+                  margin: EdgeInsets.all(50),
+                  width: 164,
+                  height: 52,
+                  child: Center(
+                    child: Text(
+                      '리뉴얼 사이트로 가기',
+                      style: GoogleFonts.notoSans(
+                        color: Color(0xffffffff),
+                        fontSize: 17,
+                        fontWeight: FontWeight.w700,
+                        fontStyle: FontStyle.normal,
+                        letterSpacing: -0.523076923076923,
+                      ),
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.primary,
+                    borderRadius: BorderRadius.circular(28),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
+                          offset: Offset(0, 8),
+                          blurRadius: 16,
+                          spreadRadius: 0)
+                    ],
+                  ),
+                ),
+              ),
               GestureDetector(
                 onTap: () {
                   Get.toNamed(Routes.EIGHT);
@@ -62,10 +99,7 @@ class HomeView extends GetView<HomeController> {
                     borderRadius: BorderRadius.circular(28),
                     boxShadow: [
                       BoxShadow(
-                          color: Theme.of(context)
-                              .colorScheme
-                              .primary
-                              .withOpacity(0.5),
+                          color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
                           offset: Offset(0, 8),
                           blurRadius: 16,
                           spreadRadius: 0)
@@ -83,7 +117,7 @@ class HomeView extends GetView<HomeController> {
               ),
               Container(
                 child: Text(
-                  "개발자 타이가 @DeveloperTyga",
+                  "개발자 타이가 @DevvTyga",
                   style: GoogleFonts.notoSans(
                     fontSize: 13.sp,
                     color: Theme.of(context).colorScheme.secondary,
@@ -230,13 +264,11 @@ class HomeView extends GetView<HomeController> {
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide(
-                color: Theme.of(context).colorScheme.secondary, width: 1.0),
+            borderSide: BorderSide(color: Theme.of(context).colorScheme.secondary, width: 1.0),
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide(
-                color: Theme.of(context).colorScheme.secondary, width: 1.0),
+            borderSide: BorderSide(color: Theme.of(context).colorScheme.secondary, width: 1.0),
           ),
           labelText: text,
         ),
@@ -406,8 +438,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.symmetric(
-                            vertical: 32, horizontal: 19.5),
+                        margin: EdgeInsets.symmetric(vertical: 32, horizontal: 19.5),
                         child: Wrap(
                           direction: Axis.horizontal,
                           alignment: WrapAlignment.center,
@@ -431,24 +462,17 @@ class HomeView extends GetView<HomeController> {
                                   SizedBox(height: 10),
                                   Container(
                                     decoration: BoxDecoration(
-                                      color: svt[index].name ==
-                                              ctrlMember.value?.name
-                                          ? Theme.of(context)
-                                              .colorScheme
-                                              .primary
+                                      color: svt[index].name == ctrlMember.value?.name
+                                          ? Theme.of(context).colorScheme.primary
                                           : Colors.grey.shade100,
                                       borderRadius: BorderRadius.circular(16.5),
                                     ),
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 15.w, vertical: 8.h),
+                                    padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 8.h),
                                     child: Text(
                                       svt[index].name,
                                       style: GoogleFonts.notoSans(
-                                        color: svt[index].name ==
-                                                ctrlMember.value?.name
-                                            ? Theme.of(context)
-                                                .colorScheme
-                                                .onSurface
+                                        color: svt[index].name == ctrlMember.value?.name
+                                            ? Theme.of(context).colorScheme.onSurface
                                             : Colors.grey,
                                         fontSize: 15.sp,
                                         fontWeight: FontWeight.w700,

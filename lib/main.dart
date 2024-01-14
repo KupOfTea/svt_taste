@@ -22,7 +22,7 @@ void main() async {
         return GetMaterialApp(
           title: "세븐틴 취향표",
           theme: ThemeData(
-            useMaterial3: true,
+            useMaterial3: false,
             colorScheme: ColorScheme.fromSwatch().copyWith(
               primary: Color(0xFFF7CAC9),
               secondary: Color(0xFF92A8D1),

@@ -50,7 +50,7 @@ class EightView extends GetView<EightController> {
               ),
               Container(
                 child: Text(
-                  "개발자 타이가 @DeveloperTyga",
+                  "개발자 타이가 @DevvTyga",
                   style: GoogleFonts.notoSans(
                     fontSize: 13.sp,
                     color: Theme.of(context).colorScheme.secondary,
@@ -342,8 +342,7 @@ class EightView extends GetView<EightController> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.symmetric(
-                            vertical: 32, horizontal: 19.5),
+                        margin: EdgeInsets.symmetric(vertical: 32, horizontal: 19.5),
                         child: Wrap(
                           direction: Axis.horizontal,
                           alignment: WrapAlignment.center,
@@ -367,24 +366,17 @@ class EightView extends GetView<EightController> {
                                   SizedBox(height: 10),
                                   Container(
                                     decoration: BoxDecoration(
-                                      color: svt[index].name ==
-                                              ctrlMember.value?.name
-                                          ? Theme.of(context)
-                                              .colorScheme
-                                              .primary
+                                      color: svt[index].name == ctrlMember.value?.name
+                                          ? Theme.of(context).colorScheme.primary
                                           : Colors.grey.shade100,
                                       borderRadius: BorderRadius.circular(16.5),
                                     ),
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 15.w, vertical: 8.h),
+                                    padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 8.h),
                                     child: Text(
                                       svt[index].name,
                                       style: GoogleFonts.notoSans(
-                                        color: svt[index].name ==
-                                                ctrlMember.value?.name
-                                            ? Theme.of(context)
-                                                .colorScheme
-                                                .onSurface
+                                        color: svt[index].name == ctrlMember.value?.name
+                                            ? Theme.of(context).colorScheme.onSurface
                                             : Colors.grey,
                                         fontSize: 15.sp,
                                         fontWeight: FontWeight.w700,

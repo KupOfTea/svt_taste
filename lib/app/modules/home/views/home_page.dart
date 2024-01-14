@@ -35,7 +35,7 @@ class HomePage extends GetView<HomeController> {
             ),
             Center(
               child: Text(
-                "개발자 타이가 @DeveloperTyga",
+                "개발자 타이가 @DevvTyga",
                 style: GoogleFonts.notoSans(
                   fontSize: 13.sp,
                   color: Theme.of(context).colorScheme.secondary,
@@ -68,10 +68,7 @@ class HomePage extends GetView<HomeController> {
                   borderRadius: BorderRadius.circular(28),
                   boxShadow: [
                     BoxShadow(
-                        color: Theme.of(context)
-                            .colorScheme
-                            .primary
-                            .withOpacity(0.5),
+                        color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
                         offset: Offset(0, 8),
                         blurRadius: 16,
                         spreadRadius: 0)
